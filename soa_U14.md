@@ -15,22 +15,3 @@ Articolele 1-7 sunt despre prognoza vitezei pe grafuri de trafic. Articolele 8-1
 | 9 | Chen, Yang, Huang, Wang, Li (2018), Discovering Urban Traffic Congestion Propagation Patterns with Taxi Trajectory Data, IEEE Access | traiectorii de taxi din Shanghai + reteaua rutiera | subgraf spatio-temporal de congestie + subgrafuri frecvente, cu completarea muchiilor lipsa | frecventa subgrafurilor (evaluare calitativa) | subgrafurile frecvente arata tipare de propagare | DOI: https://doi.org/10.1109/ACCESS.2018.2881039 (IEEE Access) |
 | 10 | Xiong, Zhou, Bennett (2023), Detecting spatiotemporal propagation patterns of traffic congestion from fine-grained vehicle trajectory data, IJGIS 37(5) | traiectorii fine din simulare + taxiuri reale | Dynamic Time Warping + grafuri aciclice de evenimente | comparatie cu o metoda existenta, pe date simulate | depaseste metoda existenta; spune ca pasul de 5 min ascunde interactiuni fine | DOI: https://doi.org/10.1080/13658816.2023.2178653 |
 
-## Atentie: de unde vin cifrele si sursele (important)
-
-La randurile 1-7, coloana "Surse de date" arata pe ce date a fost testat articolul ORIGINAL (de exemplu STGCN pe BJER4 si PeMSD7, AGCRN pe PEMSD4 si PEMSD8). Coloana "Rezultat" este insa MAE la 60 min pe PEMS-BAY, luat din Tabelul 3 din STID, unde autorii au rulat toate modelele pe acelasi split. Deci la STGCN, AGCRN si GMAN cifra nu vine din articolul lor, ci din reproducerea din STID. Trebuie spus asta si la prezentare.
-
-## Cum verifici tu fiecare rand
-
-1. Deschide linkul din ultima coloana (arXiv sau DOI) si verifica titlul, autorii si anul.
-2. La randurile 1-6: cauta in articol sectiunea "Experiments" / "Datasets" si verifica ce seturi de date folosesc (coloana "Surse").
-3. La randurile 1-7: deschide articolul STID (arXiv 2208.05233), Tabelul 3, coloana PEMS-BAY, linia "Horizon 3 / 60 min", si verifica MAE-ul fiecarui model (1,99 / 2,01 / 1,95 / 1,97 / 1,99 / 1,89 / 1,89). Verifica si baseline-ul Historical Inertia (3,05).
-4. La randul 8: in PDF cauta "281 sites", "75 minutes", "2.24%", "4.26%". Articolul din PDF e varianta acceptata a versiunii IEEE din 2017; anul 2015 este de la workshop-ul UrbComp.
-5. La randul 9: linkul DOI te duce la articol. Revista (IEEE Access) am dedus-o din prefixul DOI "ACCESS", asa ca confirma pe pagina IEEE. Volumul si paginile nu le am, completeaza-le daca le vrei.
-6. La randul 10: pe pagina DOI verifica volumul 37, numarul 5, paginile 1157-1179 si abstractul (DTW, grafuri aciclice, 5 minute).
-7. Cauta fiecare titlu si pe Google Scholar ca sa vezi ca exista si ca poti copia citarea oficiala.
-
-## Ce retin pentru proiect
-
-- Un model fara graf (STID) ajunge la acelasi MAE ca cel mai bun model cu graf (GMAN), deci nu pot presupune ca graful aduce informatie in plus. Il voi testa: comparatia per senzor vs. graf + timp.
-- Articolele 8-10 lucreaza pe evenimente de congestie, nu pe prognoza. De acolo iau ideea de a defini congestia printr-un prag (o percentila a vitezei fiecarui senzor) si de a urmari cum trece de la un senzor la vecinii lui.
-- Articolul 10 spune ca un pas de 5 minute poate ascunde propagari rapide. O sa trec asta la limitari.
