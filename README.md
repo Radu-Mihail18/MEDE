@@ -21,3 +21,11 @@ Se deschide un terminal in folderul unde se afla `load_sources.py` si `datacard_
 Rezultate in `outputs/`: `rezumat.json`, `raport_acoperire.csv`, `tabel_aliniat.parquet`
 (sau `tabel_aliniat.csv.gz` daca `pyarrow` nu e instalat). Scriptul actualizeaza si blocul
 "Valori calculate" din `datacard_U14.md`.
+
+## Rulare matrice X
+
+    cd calea\catre\folder
+    python matrice_X_build.py --data-dir data --out-dir outputs
+
+Rularea comenzii creeaza matricea X, rezultatele fiind adaugate in folderul outputs.
+Scriptul matrice_X_build.py trebuie sa fie in acelasi folder cu scriptul load_sources.py si cu folderul data (care contine PEMS-BAY, PEMS-BAY-META si adj_mx_bay)
