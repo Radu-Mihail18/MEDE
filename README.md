@@ -28,4 +28,11 @@ Rezultate in `outputs/`: `rezumat.json`, `raport_acoperire.csv`, `tabel_aliniat.
     python matrice_X_build.py --data-dir data --out-dir outputs
 
 Rularea comenzii creeaza matricea X, rezultatele fiind adaugate in folderul outputs.
-Scriptul matrice_X_build.py trebuie sa fie in acelasi folder cu scriptul load_sources.py si cu folderul data (care contine PEMS-BAY, PEMS-BAY-META si adj_mx_bay)
+Scriptul matrice_X_build.py trebuie sa fie in acelasi folder cu scriptul load_sources.py si cu folderul data (care contine PEMS-BAY, PEMS-BAY-META si adj_mx_bay).
+
+## Rulare script de comparare CP3
+
+    cd calea\catre\folder
+    python Compare.py --data-dir data --out-dir outputs
+
+Scriptul Compare.py trebuie sa fie in acelasi folder cu scriptul load_sources.py si matrice_X_build.py si cu folderul data (care contine PEMS-BAY, PEMS-BAY-META si adj_mx_bay).
