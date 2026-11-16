@@ -1,6 +1,6 @@
 # Matricea X - U14 (CP2)
 
-Document despre matricea X: ce contine, cum s-au adus cele 3 surse la aceeasi unitate si acelasi pas de timp, de unde vine fiecare trasatura si ce arata statisticile. Numerele sunt cele produse de `construieste_X.py` (folderul `outputs/`), pe datele PEMS-BAY.
+Document despre matricea X: ce contine, cum s-au adus cele 3 surse la aceeasi unitate si acelasi pas de timp, de unde vine fiecare trasatura si ce arata statisticile. Numerele sunt cele produse de `matrice_X_build.py` (folderul `outputs/`), pe datele PEMS-BAY.
 
 ## Forma matricei
 
@@ -151,7 +151,6 @@ Matricea completa si rezumatul pe grupuri: `corelatii_intre_surse.csv`, `corelat
 - Pragul de congestie (60%) si intervalele de varf sunt alegeri de lucru; trebuie testate in sensibilitate.
 - Trasaturile din viteze folosesc doar perioada de antrenare; valorile pot diferi usor daca se schimba punctul de taiere.
 
-## Cum se reproduce
 
 ```
 python construieste_X.py --data-dir data --out-dir outputs
