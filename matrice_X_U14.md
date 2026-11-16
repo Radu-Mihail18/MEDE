@@ -153,6 +153,6 @@ Matricea completa si rezumatul pe grupuri: `corelatii_intre_surse.csv`, `corelat
 
 
 ```
-python construieste_X.py --data-dir data --out-dir outputs
+python matrice_X_build.py --data-dir data --out-dir outputs
 ```
-(din folderul in care sunt `load_sources.py` si `construieste_X.py`; fisierele sursa sunt in `data/`)
+(din folderul in care sunt `load_sources.py` si `matrice_X_build.py`; fisierele sursa sunt in `data/`)
